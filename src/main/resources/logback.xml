@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<include resource="logback-perf4j.xml" />
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%date{yyyy-MM-dd HH:mm:ss} %thread %-5level %X{hello} %logger:%line %msg%n</Pattern>
+		</encoder>
+	</appender>
+	<!--<appender name="FILE"-->
+		<!--class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+		<!--<file>/var/log/webapps/adsystem/ad.log</file>-->
+		<!--&lt;!&ndash;<file>B:/log/ad-web.log</file> &ndash;&gt;-->
+		<!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+			<!--&lt;!&ndash; <FileNamePattern>B:/log/ad-web.log</FileNamePattern> &ndash;&gt;-->
+			<!--<FileNamePattern>/var/log/webapps/adsystem/ad.log.%d{yyyy-MM-dd}.log-->
+			<!--</FileNamePattern>-->
+		<!--</rollingPolicy>-->
+		<!--<encoder>-->
+			<!--<Pattern>[%date{yyyy-MM-dd HH:mm:ss}][%thread][%-5level][%logger:%line]%msg%n</Pattern>-->
+		<!--</encoder>-->
+	<!--</appender>-->
+	<!--<if condition='property("spring.profiles.active").contains("online")'>-->
+		<!--<then>-->
+			<!--<logger name="com.yiji" additivity="false">-->
+				<!--<level value="ERROR" />-->
+				<!--<appender-ref ref="FILE" />-->
+			<!--</logger>-->
+		<!--</then>-->
+		<!--<else>-->
+			<logger name="com.yx.javatest" additivity="false">
+				<level value="DEBUG" />
+				<appender-ref ref="STDOUT" />
+			</logger>		
+		<!--</else>-->
+	<!--</if>-->
+</configuration>
